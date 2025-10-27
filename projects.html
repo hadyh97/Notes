@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Projects — Hady</title>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/styles.css" />
+  <script>
+    window.MathJax = { tex: { inlineMath: [['$', '$'], ['\\(', '\\)']] }, svg: { fontCache: 'global' } };
+  </script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="brand">Hady Hosam — Portfolio</a>
+      <nav class="nav">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="projects.html" class="nav-link active">Projects</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="narrow prose">
+      <h1>Projects</h1>
+      <p class="lead">Each project has a short description and opens in a clean overlay viewer.</p>
+    </section>
+
+    <section class="project-list">
+      <div class="project-card">
+        <h2>Linear Transformations as Geometry: Projection, Eigen-Directions, and the SVD</h2>
+        <p>
+          A geometric exposition of linear transformations. Projection leads to the least-squares solution; eigenvectors describe invariant directions;
+          positive definite structure appears through quadratic forms; and the singular value decomposition synthesizes the picture as rotation–scaling–rotation.
+          The notebook emphasizes structure and interpretation, with minimal but purposeful computation.
+        </p>
+        <button class="open-btn" data-notebook="notebooks/Linear.Transfroms.html">Open Notebook</button>
+      </div>
+    </section>
+  </main>
+
+  <div id="notebookOverlay" class="overlay" role="dialog" aria-modal="true" aria-label="Notebook Viewer">
+    <div class="overlay-content">
+      <div class="overlay-header">
+        <div class="overlay-title">Notebook Viewer</div>
+        <button id="closeOverlay" class="overlay-close" aria-label="Close">×</button>
+      </div>
+      <iframe id="notebookFrame" src="" title="Notebook"></iframe>
+      <div id="overlayFallback" class="overlay-fallback" hidden>
+        <div class="fallback-inner">
+          <h3>Notebook failed to load</h3>
+          <p>Make sure the file exists at <code>notebooks/Linear.Transfroms.html</code> and that the filename matches exactly.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© <span id="year"></span> Hady — Built with vanilla HTML/CSS/JS. Math rendered with MathJax.</p>
+    </div>
+  </footer>
+
+  <script src="assets/site.js"></script>
+</body>
+</html>

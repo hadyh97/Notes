@@ -1,0 +1,45 @@
+:root {
+  --text: #1f2328;
+  --muted: #444;
+  --line: #e6e6e6;
+  --brand: #111;
+  --brand-2: #2a2a2a;
+  --bg: #fff;
+}
+
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; background: var(--bg); color: var(--text); font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; }
+
+.container { width: min(900px, 92vw); margin: 0 auto; }
+
+.site-header { border-bottom: 1px solid var(--line); background: #fafafa; }
+.header-inner { display: flex; align-items: center; justify-content: space-between; padding: 14px 0; }
+.brand { text-decoration: none; color: var(--text); font-weight: 800; }
+.nav .nav-link { text-decoration: none; color: var(--muted); margin-left: 16px; }
+.nav .nav-link.active { color: var(--text); font-weight: 600; }
+
+.prose h1 { margin: 24px 0 12px; }
+.prose .lead { color: var(--muted); margin: 0 0 16px; }
+
+.project-list { margin: 10px 0 40px; }
+.project-card { border: 1px solid var(--line); border-radius: 14px; padding: 18px 16px; margin: 18px 0; background: #fff; }
+.project-card h2 { margin: 0 0 8px; font-weight: 700; font-size: 1.1rem; }
+.project-card p { margin: 0 0 12px; color: var(--muted); line-height: 1.45; }
+.open-btn { background: var(--brand); color: #fff; border: 0; padding: 10px 14px; border-radius: 10px; cursor: pointer; }
+.open-btn:hover { background: var(--brand-2); }
+
+.site-footer { border-top: 1px solid var(--line); margin-top: 30px; }
+.site-footer .container { padding: 14px 0; }
+
+/* Overlay */
+.overlay { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.55); z-index: 9999; }
+.overlay-content { position: absolute; top: 5vh; left: 50%; transform: translateX(-50%); width: min(1200px, 92vw); height: 90vh; background: #fff; border-radius: 14px; box-shadow: 0 12px 30px rgba(0,0,0,0.25); overflow: hidden; }
+.overlay-header { display: flex; align-items: center; justify-content: space-between; padding: 10px 14px; border-bottom: 1px solid var(--line); background: #fafafa; }
+.overlay-title { font-weight: 600; }
+.overlay-close { background: transparent; border: 0; font-size: 22px; cursor: pointer; padding: 4px 8px; }
+.overlay iframe { width: 100%; height: calc(90vh - 52px); border: 0; }
+
+/* Fallback message inside overlay if iframe fails */
+.overlay-fallback { position: absolute; inset: 52px 0 0 0; display: flex; align-items: center; justify-content: center; background: #fff; }
+.fallback-inner { text-align: center; color: var(--muted); }
+.fallback-inner h3 { color: var(--text); }
